@@ -1,2 +1,2 @@
 Databases
-1. MySql
+1. MySql - Advanced
