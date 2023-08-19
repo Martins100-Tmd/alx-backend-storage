@@ -5,7 +5,7 @@ Task 0's module
 import redis
 import uuid
 import json
-from typings import Union
+from typing import Union
 
 
 class Cache:
@@ -19,6 +19,6 @@ class Cache:
     def store(self, data: Union[str, bytes, float, int]) -> str:
         '''returns a string
         '''
-        uniqueId = uuid()
+        uniqueId = uuid.uuid4()
         self._redis.set(uniqueId, json.dumps(data))
         return uniqueId
