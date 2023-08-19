@@ -4,7 +4,6 @@ Task 0's module
 '''
 import redis
 import uuid
-import json
 from typing import Union
 
 
@@ -13,8 +12,8 @@ class Cache:
     '''
 
     def __init__(self):
-        self._redis = redis.Redis(charset='utf-8', decode_responses=True)
-        self._redis.flushdb()
+        self._redis = redis.Redis()
+        self._redis.flushdb(True)
 
     def store(self, data: Union[str, bytes, float, int]) -> str:
         '''returns a string
